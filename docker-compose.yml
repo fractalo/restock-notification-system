@@ -1,0 +1,21 @@
+name: review-system
+
+services:
+  database:
+    image: mysql:8.0.39
+    container_name: restock-notification-system-db
+    env_file: .env.db
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  backend:
+    image: restock-notification-system-backend:latest
+    container_name: restock-notification-system-backend
+    env_file: .env.backend
+    ports:
+      - 8080:8080
+    depends_on:
+      database:
+        condition: service_healthy
