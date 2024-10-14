@@ -1,6 +1,10 @@
 # Restock Notification System
 재입고 알림 시스템
 
+## ERD
+![Restock Notification](https://github.com/user-attachments/assets/d0e44d6c-f99e-492d-9115-94db55ea0f83)
+
+
 ## 빌드 및 실행
 
 ### Docker 이미지 빌드
